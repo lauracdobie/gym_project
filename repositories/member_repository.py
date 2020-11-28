@@ -21,7 +21,6 @@ def add(member):
     sql = "INSERT INTO members(name, address, phone, email, premium, membership_no) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
     values = [member.name, member.address, member.phone, member.email, member.premium, member.membership_no]
     result = run_sql(sql, values)
-    # pdb.set_trace()
     id = result[0]['id']
     member.id = id
 
@@ -29,7 +28,6 @@ def add(member):
 def edit(member):
     sql = "UPDATE members SET (name, address, phone, email, premium, membership_no) = (%s, %s, %s, %s, %s, %s) WHERE id = %s"
     values = [member.name, member.address, member.phone, member.email, member.premium, member.membership_no, member.id]
-    # pdb.set_trace
     result = run_sql(sql, values)
 
 #select all
