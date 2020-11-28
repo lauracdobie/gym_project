@@ -17,4 +17,7 @@ member_repository.add(claire)
 angela = Member("Angela O'Shaughnessy", "12 Smith Street", "07785976809", "angelaO79@gmail.com", False, 895)
 member_repository.add(angela)
 
+claire = Member("Clare Whittaker", "14 Smith Street", "07783902109", "clairem89@gmail.com", True, 1004)
+member_repository.edit(claire)
+
 pdb.set_trace()
