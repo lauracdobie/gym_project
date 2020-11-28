@@ -7,6 +7,8 @@ CREATE TABLE members(
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     address TEXT,
+    phone VARCHAR(255),
+    email VARCHAR(255),
     premium BOOLEAN,
     membership_no INT
 );
