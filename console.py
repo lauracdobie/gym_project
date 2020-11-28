@@ -24,4 +24,10 @@ member_repository.add(angela)
 body_pump = ClassType("Body Pump", "Barbell workout to music. Great for building strength and lean muscle!", "High", "Moderate")
 class_type_repository.add(body_pump)
 
+body_balance = ClassType ("Body Balance", "A mix of yoga, tai chi and pilates. Great for mobility", "Low", "Low")
+class_type_repository.add(body_balance)
+
+body_pump = ClassType("Body Pump", "Barbell workout to music. Burns lots of calories", "Medium", "Low")
+class_type_repository.edit(body_pump)
+
 pdb.set_trace()

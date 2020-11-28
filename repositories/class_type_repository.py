@@ -19,14 +19,13 @@ def add(class_type):
     sql = "INSERT INTO class_types(name, description, intensity, difficulty) VALUES (%s, %s, %s, %s) RETURNING id"
     values = [class_type.name, class_type.description, class_type.intensity, class_type.difficulty]
     result = run_sql(sql, values)
-    # pdb.set_trace()
     id = result[0]['id']
     class_type.id = id
 
 #edit
 def edit(class_type):
     sql = "UPDATE class_types SET (name, description, intensity, difficulty) = (%s, %s, %s, %s) WHERE id = %s"
-    values = [class_type.name, class_type.description, class_type.difficulty, class_type.id]
+    values = [class_type.name, class_type.description, class_type.intensity, class_type.difficulty, class_type.id]
     result = run_sql(sql, values)
 
 #select all
@@ -36,7 +35,7 @@ def select_all():
     results = run_sql(sql)
 
     for row in results:
-        class_type = ClassType(row['name'], row['description'], row['intensity'], row['difficult'], row['id'])
+        class_type = ClassType(row['name'], row['description'], row['intensity'], row['difficulty'], row['id'])
         all_class_types.append(class_type)
     
     return all_class_types
