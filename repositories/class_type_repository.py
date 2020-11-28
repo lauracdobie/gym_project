@@ -48,5 +48,5 @@ def select(id):
     result = run_sql(sql, value)[0]
 
     if result is not None:
-        class_type = Class(result['name'], result['description'], result['intensity'], result['difficulty'], result['id'])
+        class_type = ClassType(result['name'], result['description'], result['intensity'], result['difficulty'], result['id'])
     return class_type
