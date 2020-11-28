@@ -14,4 +14,5 @@ class TestBookingClass(unittest.TestCase):
     def test_booking_has_all_details(self):
         self.assertEqual("Claire Whittaker", self.booking.member.name)
         self.assertEqual("Body Pump", self.booking.fitness_class.class_type.name)
+        self.assertEqual("14:00", self.booking.fitness_class.time)
 
