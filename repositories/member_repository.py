@@ -39,3 +39,13 @@ def select_all():
     return all_members
 
 #select
+def select(id):
+    member = None
+    sql = "SELECT * from members WHERE id = %s"
+    value = [id]
+    result = run_sql(sql, value)[0]
+
+    if result is not None:
+        member = Member(result['name'], result['address'], result['phone'], result['email'], result['premium'], result['membership_no'], result['id'])
+    return member
+
