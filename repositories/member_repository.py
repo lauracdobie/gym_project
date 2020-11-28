@@ -1,5 +1,6 @@
 from db.run_sql import run_sql
 from models.member import Member
+import pdb
 
 #delete all
 def delete_all():
@@ -17,11 +18,12 @@ def delete_selected(id):
 
 #add
 def add(member):
-    sql = "INSERT INTO (name, address, phone, email, premium, membership_no) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
+    sql = "INSERT INTO members(name, address, phone, email, premium, membership_no) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id"
     values = [member.name, member.address, member.phone, member.email, member.premium, member.membership_no]
     result = run_sql(sql, values)
-    member.id = result[0]['id']
-    return member
+    # pdb.set_trace()
+    id = result[0]['id']
+    member.id = id
 
 #edit
 #select all

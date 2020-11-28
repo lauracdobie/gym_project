@@ -1,7 +1,7 @@
 DROP TABLE IF EXISTS bookings;
+DROP TABLE IF EXISTS members;
 DROP TABLE IF EXISTS fitness_classes;
 DROP TABLE IF EXISTS class_types;
-DROP TABLE IF EXISTS members;
 
 CREATE TABLE members(
     id SERIAL PRIMARY KEY,
