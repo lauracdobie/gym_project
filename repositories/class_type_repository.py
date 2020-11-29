@@ -9,7 +9,7 @@ def delete_all():
 
 
 #delete selected
-def delete_selected(id):
+def delete(id):
     sql = "DELETE  FROM class_types WHERE id = %s"
     value = [id]
     run_sql(sql, value)

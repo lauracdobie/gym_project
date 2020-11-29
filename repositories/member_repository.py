@@ -11,7 +11,7 @@ def delete_all():
 
 
 #delete selected
-def delete_selected(id):
+def delete(id):
     sql = "DELETE  FROM members WHERE id = %s"
     value = [id]
     run_sql(sql, value)
