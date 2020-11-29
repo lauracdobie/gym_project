@@ -1,7 +1,9 @@
 from db.run_sql import run_sql
 from models.fitness_class import FitnessClass
 import models.class_type as ClassType
+from models.member import Member
 import repositories.class_type_repository as class_type_repository
+import repositories.member_repository as member_repository
 import pdb
 
 #delete all
@@ -53,4 +55,21 @@ def select(id):
     fitness_class = FitnessClass(class_type, result['date'], result['time'], result['duration'], result['instructor'], result['capacity'], result['location'], result['id'])
     return fitness_class
 
+def get_participants(fitness_class):
+    participant_list = []
+    sql = """SELECT members.*
+                FROM members
+                INNER JOIN bookings ON members.id = bookings.member_id
+                INNER JOIN fitness_classes ON fitness_classes.id = bookings.fitness_class_id
+                WHERE fitness_classes.id = %s"""
+
+    values = [fitness_class.id]
+    sql_results = run_sql(sql, values)
+    
+    for row in sql_results:
+
+        participant = Member(row['name'], row['address'], row['phone'], row['email'], row['premium'], row['membership_no'], row['id'])
+        participant_list.append(participant)
+    
+    return participant_list
   

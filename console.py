@@ -56,4 +56,6 @@ booking_repository.edit(booking_2)
 booking_3 = Booking(claire, body_pump_express)
 booking_repository.add(booking_3)
 
+fitness_class_repository.get_participants(body_pump_express)
+
 pdb.set_trace()
