@@ -22,7 +22,7 @@ def add(fitness_class):
     values = [fitness_class.class_type.id, fitness_class.date, fitness_class.time, fitness_class.duration, fitness_class.instructor, fitness_class.capacity, fitness_class.location]
     result = run_sql(sql, values)
     id = result[0]['id']
-    fitness_class.class_type.id = id
+    fitness_class.id = id
 
 #edit
 def edit(fitness_class):
