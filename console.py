@@ -2,12 +2,12 @@ import pdb
 from models.member import Member
 from models.class_type import ClassType
 from models.fitness_class import FitnessClass
-# from models.booking import Booking
+from models.booking import Booking
 
 import repositories.member_repository as member_repository
 import repositories.class_type_repository as class_type_repository
 import repositories.fitness_class_repository as fitness_class_repository
-# import repositories.booking_repository as booking_repository
+import repositories.booking_repository as booking_repository
 
 member_repository.delete_all()
 class_type_repository.delete_all()
@@ -33,5 +33,10 @@ fitness_class_repository.add(body_balance_am)
 
 body_balance_am = FitnessClass(body_balance, "05/12/2020", "18:00", "45 minutes", "Anna Murray", 15, "Studio 1")
 fitness_class_repository.edit(body_balance_am)
+
+booking_1 = Booking(angela, body_pump_express)
+booking_repository.add(booking_1)
+
+booking_2 = Booking(claire, body_balance_am)
 
 pdb.set_trace()
