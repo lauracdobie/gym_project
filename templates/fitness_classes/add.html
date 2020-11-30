@@ -6,7 +6,7 @@
         <form action="/fitness-classes" method="post">
             <div>
                 <label for="class_type">Class type</label>
-                <select id="class_type" name="class_type">
+                <select id="class_type" name="class_type_id">
                     {% for class_type in class_types %}
                     <option value="{{class_type.id}}">{{class_type.name}}</option>
                     {% endfor %}
