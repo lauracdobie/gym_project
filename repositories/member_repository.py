@@ -53,3 +53,15 @@ def select(id):
         member = Member(result['name'], result['address'], result['phone'], result['email'], result['premium'], result['membership_no'], result['id'])
     return member
 
+#select by membership number
+def select_by_membership_no(membership_no):
+    member = None
+    sql = "SELECT * from members WHERE membership_no = %s"
+    value = [membership_no]
+    result = run_sql(sql, value)[0]
+
+    if result is not None:
+        member = Member(result['name'], result['address'], result['phone'], result['email'], result['premium'], result['membership_no'], result['id'])
+    return member
+
+

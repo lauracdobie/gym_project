@@ -11,3 +11,19 @@ bookings_blueprint = Blueprint("bookings", __name__)
 @bookings_blueprint.route("/book-class")
 def booking_form():
     return render_template("bookings/index.html")
+
+# @bookings_blueprint.route("/book-class", methods=['POST'])
+# def create_booking():
+#     fitness_class = fitness_class_repository.select(request.form['fitness_class_id'])
+#     date = request.form['date']
+#     time = request.form['time']
+#     duration = request.form['duration']
+#     instructor = request.form['instructor']
+#     location = request.form['location']
+#     capacity = request.form['capacity']
+
+#     print("🐰" + class_type.name + "🐰")
+
+#     new_class = FitnessClass(class_type, date, time, duration, instructor, capacity, location)
+#     fitness_class_repository.add(new_class)
+#     return redirect('/fitness-classes')
