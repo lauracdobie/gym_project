@@ -5,7 +5,7 @@
     <article>
         <form action="/bookings" method="post">
             <div>
-                <label for="fitness_class">Class type</label>
+                <label for="fitness_class">Class</label>
                 <select id="fitness_class" name="fitness_class_id">
                     {% for fitness_class in all_fitness_classes %}
                     <option value="{{fitness_class.id}}">{{fitness_class.class_type.name}} {{fitness_class.date}} {{fitness_class.time}}</option>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<nav>
+    <ul>
+        <li><a href="/class-types/add">Add a new class type</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Class types</h2>
+    <article>
+    {% for class_type in class_types %}
+        <p>Name: {{class_type.name}}</p>
+        <p>Description: {{class_type.description}}</p>
+        <p>Intensity: {{class_type.intensity}}</p>
+        <p>Difficulty: {{class_type.difficulty}}</p>
+        <p><a href="/class-types/{{class_type.id}}/edit">Edit class type details</a></p>
+    {% endfor %}
+    </article>
+</main>
+{% endblock %}
