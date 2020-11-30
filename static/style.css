@@ -62,12 +62,28 @@ header {
     padding: 15px;
     margin-bottom: 40px;
     transition: transform ease-in 0.3s;
-    background-color: #6c7e7f;
+    background-color: #63887f;
     border-radius: 10px;
 }
 
 .individual-listing > p {
     line-height: 1.5;
+}
+
+.individual-listing > form {
+    text-align: center;
+    margin-left: 0;
+}
+
+.individual-listing > p > a {
+    color: #00ebb4;
+    text-decoration: none;
+    border-bottom: solid 2px #63887f;
+    transition: border ease-in 0.5s;
+}
+
+.individual-listing > p > a:hover {
+    border-bottom: solid 2px #00ebb4;
 }
 
 .individual-listing:hover {
@@ -79,5 +95,9 @@ header {
 }
 
 form {
+    margin-left: 40px;
+}
+
+.class-description {
     margin-left: 40px;
 }
