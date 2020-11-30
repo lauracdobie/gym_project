@@ -29,3 +29,21 @@ def create_member():
     new_member = Member(name, address, phone, email, premium, membership_no)
     member_repository.add(new_member)
     return redirect('/members')
+
+@members_blueprint.route("/members/<id>/edit", methods=['GET'])
+def edit_member_details(id):
+    member = member_repository.select(id)
+    return render_template("members/edit.html", member = member)
+
+@members_blueprint.route("/members/<id>", methods=['POST'])
+def update_member_details(id):
+    name = request.form['name']
+    address = request.form['address']
+    phone = request.form['phone']
+    email = request.form['email']
+    premium = request.form['premium']
+    membership_no = request.form['membership_no']
+
+    updated_member = Member(name, address, phone, email, premium, membership_no, id)
+    member_repository.edit(updated_member)
+    return redirect('/members')
