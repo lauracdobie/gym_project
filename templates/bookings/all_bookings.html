@@ -9,6 +9,9 @@
         <p>Date: {{booking.fitness_class.date}}</p>
         <p>Time: {{booking.fitness_class.time}}</p>
         <p>Membership no: {{booking.member.membership_no}}</p>
+        <form action="/bookings/{{booking.id}}/delete" method="POST">
+            <button type="submit" class="delete">DELETE BOOKING</button>
+        </form>
     {% endfor %}
     </article>
 </main>
