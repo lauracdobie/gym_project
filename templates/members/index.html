@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<nav>
+    <ul>
+        <li><a href="/add-member">Add a new member</a></li>
+        <li><a href="/edit-member">Edit member details</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Members</h2>
+    <article>
+    {% for member in all_members %}
+        <p>Name: {{member.name}}</p>
+        <p>Address: {{member.address}}</p>
+        <p>Phone: {{member.phone}}</p>
+        <p>Email: {{member.email}}</p>
+        <p>Membership no: {{member.membership_no}}</p>
+        {% if member.premium == True %}
+            <p>Premium member</p>
+        {% else %}
+            <p>Standard member</p>
+        {% endif %}
+    {% endfor %}
+    </article>
+</main>
+{% endblock %}
