@@ -8,8 +8,6 @@ class_types_blueprint = Blueprint("class_types", __name__)
 @class_types_blueprint.route("/class-types")
 def class_type_list():
     class_types = class_type_repository.select_all()
-    for class_type in class_types:
-        print("🐰" + class_type.name + "🐰")
     return render_template("class_types/index.html", class_types=class_types)
 
 @class_types_blueprint.route("/class-types/add", methods=['GET'])

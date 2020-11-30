@@ -20,6 +20,9 @@
             <p>Standard member</p>
         {% endif %}
         <p><a href="/members/{{member.id}}/edit">Edit member details</a></p>
+        <form action="/members/{{member.id}}/delete" method="POST">
+            <button type="submit" class="delete">DELETE MEMBER</button>
+        </form>
     {% endfor %}
     </article>
 </main>

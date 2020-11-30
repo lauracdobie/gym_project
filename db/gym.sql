@@ -23,7 +23,7 @@ CREATE TABLE class_types(
 
 CREATE TABLE fitness_classes(
     id SERIAL PRIMARY KEY,
-    class_type_id INT REFERENCES class_types(id),
+    class_type_id INT REFERENCES class_types(id) ON DELETE CASCADE,
     date VARCHAR(255),
     time VARCHAR(255),
     duration VARCHAR(255),
@@ -34,6 +34,6 @@ CREATE TABLE fitness_classes(
 
 CREATE TABLE bookings(
     id SERIAL PRIMARY KEY,
-    member_id INT REFERENCES members(id),
-    fitness_class_id INT REFERENCES fitness_classes(id)
+    member_id INT REFERENCES members(id) ON DELETE CASCADE,
+    fitness_class_id INT REFERENCES fitness_classes(id) ON DELETE CASCADE
 );
