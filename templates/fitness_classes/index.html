@@ -1,0 +1,23 @@
+{% extends "base.html"%}
+{% block content %}
+<nav>
+    <ul>
+        <li><a href="/add-class">Add class to timetable</a></li>
+        <li><a href="/add-class-description">Create a new class description</a></li>
+    </ul>
+</nav>
+<main>
+    <h2>Upcoming classes</h2>
+    <article>
+    {% for fitness_class in fitness_classes %}
+        <p>{{fitness_class.class_type.name}}</p>
+        <p>Date: {{fitness_class.date}}</p>
+        <p>Time: {{fitness_class.time}}</p>
+        <p>Duration: {{fitness_class.duration}}</p>
+        <p>Instructor {{fitness_class.instructor}}</p>
+        <p>Spaces: {{fitness_class.capacity}}</p>
+        <p>Location: {{fitness_class.location}}</p>
+    {% endfor %}
+    </article>
+</main>
+{% endblock %}
