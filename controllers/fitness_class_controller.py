@@ -27,8 +27,15 @@ def create_fitness_class():
     location = request.form['location']
     capacity = request.form['capacity']
 
-    print("🐰" + class_type.name + "🐰")
+    # print("🐰" + class_type.name + "🐰")
 
     new_class = FitnessClass(class_type, date, time, duration, instructor, capacity, location)
     fitness_class_repository.add(new_class)
     return redirect('/fitness-classes')
+
+@fitness_classes_blueprint.route("/fitness-classes/<id>/participant-list")
+def display_participants(id):
+    fitness_class = fitness_class_repository.select(id)
+    participant_list = fitness_class_repository.get_participants(fitness_class)
+
+    return render_template("fitness_classes/participant_list.html", participant_list = participant_list)
