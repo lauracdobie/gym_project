@@ -1,0 +1,53 @@
+{% extends "base_no_nav.html" %}
+{% block content %}
+<main>
+    <h2>Edit fitness class details</h2>
+    <article>
+        <form action="/fitness-classes/{{fitness_class.id}}" method="post">
+            <div>
+                <label for="class_type">Class type</label>
+                <select id="class_type" name="class_type_id">
+                    {% for class_type in class_types %}
+                    <option value="{{class_type.id}}">{{class_type.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div>
+                <label for="date">Date</label>
+                <input type="text" id="date" name="date" value="{{fitness_class.date}}" placeholder="Date" maxlength="10" required>
+                <p>Format: dd/mm/yyyy</p>
+            </div>
+
+            <div>
+                <label for="time">Time</label>
+                <input type="text" id="time" name="time" value="{{fitness_class.time}}" placeholder="Time" maxlength="5" required>
+                <p>Format: hh:mm</p>
+            </div>
+
+            <div>
+                <label for="duration">Duration</label>
+                <input type="text" id="duration" name="duration" value="{{fitness_class.duration}}" placeholder="Duration" maxlength="10" required>
+            </div>
+
+            <div>
+                <label for="instructor">Instructor</label>
+                <input type="text" id="instructor" name="instructor" value="{{fitness_class.instructor}}" placeholder="Instructor" size="30" required>
+            </div>
+
+            <div>
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" value="{{fitness_class.location}}" placeholder="Location" size="30" required>
+            </div>
+            
+            
+            <div>
+                <label for="capacity">Capacity</label>
+                <input type="number" id="capacity" name="capacity" value="{{fitness_class.capacity}}" placeholder="Capacity" required>
+            </div>
+
+            <button type="submit">Edit class details</button>
+        </form>
+    </article>
+</main>
+{% endblock %}

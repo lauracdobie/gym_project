@@ -39,3 +39,23 @@ def display_participants(id):
     participant_list = fitness_class_repository.get_participants(fitness_class)
 
     return render_template("fitness_classes/participant_list.html", participant_list = participant_list)
+
+@fitness_classes_blueprint.route("/fitness-classes/<id>/edit", methods=['GET'])
+def edit_fitness_class_details(id):
+    class_types = class_type_repository.select_all()
+    fitness_class = fitness_class_repository.select(id)
+    return render_template("fitness_classes/edit.html", fitness_class = fitness_class, class_types = class_types)
+
+@fitness_classes_blueprint.route("/fitness-classes/<id>", methods=['POST'])
+def update_fitness_class_details(id):
+    class_type = class_type_repository.select(request.form['class_type_id'])
+    date = request.form['date']
+    time = request.form['time']
+    duration = request.form['duration']
+    instructor = request.form['instructor']
+    location = request.form['location']
+    capacity = request.form['capacity']
+
+    updated_class = FitnessClass(class_type, date, time, duration, instructor, capacity, location, id)
+    fitness_class_repository.edit(updated_class)
+    return redirect('/fitness-classes')
