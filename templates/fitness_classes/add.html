@@ -1,0 +1,51 @@
+{% extends "base_no_nav.html" %}
+{% block content%}
+<main>
+    <h2>Add class to timetable</h2>
+    <article>
+        <form action="/fitness-classes" method="post">
+            <div>
+                <label for="class_type">Class type</label>
+                <select id="class_type" name="class_type">
+                    {% for class_type in class_types %}
+                    <option value="{{class_type.id}}">{{class_type.name}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            
+            <div>
+                <label for="date">Date</label>
+                <input type="text" id="date" name="date" placeholder="Date" maxlength="10" required>
+                <p>Format: dd/mm/yyyy</p>
+            </div>
+
+            <div>
+                <label for="time">Time</label>
+                <input type="text" id="time" name="time" placeholder="Time" maxlength="5" required>
+                <p>Format: hh:mm</p>
+            </div>
+
+            <div>
+                <label for="duration">Duration</label>
+                <input type="text" id="duration" name="duration" placeholder="Duration" maxlength="10" required>
+            </div>
+
+            <div>
+                <label for="instructor">Instructor</label>
+                <input type="text" id="instructor" name="instructor" placeholder="Instructor" size="30" required>
+            </div>
+
+            <div>
+                <label for="location">Location</label>
+                <input type="text" id="location" name="location" placeholder="Location" size="30" required>
+            </div>
+            
+            
+            <div>
+                <label for="capacity">Capacity</label>
+                <input type="number" id="capacity" name="capacity" placeholder="Capacity" required>
+            </div>
+            
+            <button type="submit">Add class to timetable</button>
+        </form>
+{% endblock%}
