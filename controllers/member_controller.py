@@ -12,3 +12,7 @@ members_blueprint = Blueprint("members", __name__)
 def member_list():
     all_members = member_repository.select_all()
     return render_template("members/index.html", all_members = all_members)
+
+@members_blueprint.route("/add-member")
+def add_member_form():
+    return render_template("members/add.html")
