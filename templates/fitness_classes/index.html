@@ -12,6 +12,7 @@
     <article>
     {% for fitness_class in fitness_classes %}
         <p>{{fitness_class.class_type.name}}</p>
+        <p><a href="/fitness-classes/{{fitness_class.id}}/description">Find out more about {{fitness_class.class_type.name}}</a></p>
         <p>Date: {{fitness_class.date}}</p>
         <p>Time: {{fitness_class.time}}</p>
         <p>Duration: {{fitness_class.duration}}</p>

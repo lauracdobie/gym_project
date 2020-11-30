@@ -64,3 +64,8 @@ def update_fitness_class_details(id):
 def delete_fitness_class(id):
     fitness_class_repository.delete(id)
     return redirect('/fitness-classes')
+
+@fitness_classes_blueprint.route("/fitness-classes/<id>/description")
+def view_class_description(id):
+    fitness_class = fitness_class_repository.select(id)
+    return render_template("fitness_classes/class_description.html", fitness_class = fitness_class)
