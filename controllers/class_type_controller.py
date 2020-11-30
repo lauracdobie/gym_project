@@ -40,3 +40,8 @@ def update_class_type_details(id):
     updated_class_type = ClassType(name, description, intensity, difficulty, id)
     class_type_repository.edit(updated_class_type)
     return redirect('/class-types')
+
+@class_types_blueprint.route("/class-types/<id>/delete", methods=['POST'])
+def delete_class_type(id):
+    class_type_repository.delete(id)
+    return redirect('/class-types')

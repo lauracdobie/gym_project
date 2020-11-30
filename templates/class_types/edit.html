@@ -26,6 +26,10 @@
             
             <button type="submit">Edit class type</button>
         </form>
+
+        <form action="/class-types/{{class_type.id}}/delete" method="POST">
+            <button type="submit" class="delete">DELETE CLASS TYPE</button>
+        </form>
     </article>
 </main>
 {% endblock %}
