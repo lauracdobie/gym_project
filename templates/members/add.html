@@ -1,15 +1,50 @@
-{% extends "base.html" %}
+{% extends "base_no_nav.html" %}
 {% block content %}
-<nav>
+<!-- <nav>
     <ul>
         <li><a href="/members">View all members</a></li>
         <li><a href="/edit-member">Edit member details</a></li>
     </ul>
-</nav>
+</nav> -->
 <main>
     <h2>Add member</h2>
     <article>
-        Form goes here
+        <form>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Name" size="30" required autofocus>
+              </div>
+            
+              <div>
+                <label for="address">Address</label>
+                <input type="text" id="address" name="address" placeholder="Address" size="80" required>
+              </div>
+
+              <div>
+                <label for="phone">Phone number</label>
+                <input type="text" id="phone" name="phone" placeholder="Phone" size="30" required>
+              </div>
+
+              <div>
+                <label for="email">Email address</label>
+                <input type="text" id="email address" name="email address" placeholder="Email" size="30" required>
+              </div>
+            
+              <div>
+                <label for="premium">Premium</label>
+                <select id="premium" name="premium">
+                  <option value="true">Yes</option>
+                  <option value="false">No</option>
+                </select>
+              </div>
+            
+              <div>
+                <label for="membership_no">Membership number</label>
+                <input type="number" id="membership_no" name="membership_no" placeholder="Membership number" required>
+              </div>
+            
+              <button type="submit">Add member</button>
+        </form>
     </article>
 </main>
 {% endblock %}
