@@ -1,7 +1,7 @@
 {% extends "base.html"%}
 {% block content %}
 <nav>
-    <ul>
+    <ul class="sub-nav">
         <li><a href="/fitness-classes/add">Add class to the timetable</a></li>
         <li><a href="/class-types/add">Create a new class type</a></li>
         <li><a href="/class-types">View class types</a></li>
@@ -9,8 +9,9 @@
 </nav>
 <main>
     <h2>Upcoming classes</h2>
-    <article>
+    <article class="listings">
     {% for fitness_class in fitness_classes %}
+    <div class="individual-listing">
         <p>{{fitness_class.class_type.name}}</p>
         <p><a href="/fitness-classes/{{fitness_class.id}}/description">Find out more about {{fitness_class.class_type.name}}</a></p>
         <p>Date: {{fitness_class.date}}</p>
@@ -21,7 +22,9 @@
         <p>Location: {{fitness_class.location}}</p>
         <p><a href="/fitness-classes/{{fitness_class.id}}/participant-list">View participant list</a></p>
         <p><a href="/fitness-classes/{{fitness_class.id}}/edit">Edit class details</a></p>
+    </div>
     {% endfor %}
+
     </article>
 </main>
 {% endblock %}

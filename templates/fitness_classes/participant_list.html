@@ -2,13 +2,13 @@
 {% block content %}
 <main>
     <h2>Participants</h2>
-    <article>
-    <ol>   
-    {% for participant in participant_list %}
-       <li><p>Name: {{participant.name}}</p>
-        <p>Phone: {{participant.phone}}</p></li> 
-    {% endfor %}
-    </ol> 
-    </article>
+        <article class="listings">
+        <ol>   
+        {% for participant in participant_list %}
+        <li class="individual-listing"><p>Name: {{participant.name}}</p>
+            <p>Phone: {{participant.phone}}</p></li> 
+        {% endfor %}
+        </ol> 
+        </article>
 </main>
 {% endblock %}

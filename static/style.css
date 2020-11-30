@@ -1,0 +1,83 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+    background-color: #288e84;
+    /* margin-left: auto;
+    margin-right: auto; */
+    margin: 0;
+}
+
+h1 {
+    font-size: 24px;
+    text-align: center;
+}
+
+h2 {
+    padding-left: 40px;
+}
+
+ul {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+ul > li {
+    list-style: none;
+    display: inline;
+    margin-right: 20px;
+}
+
+ul > li > a {
+    list-style: none;
+    text-decoration: none;
+    font-size: 20px;
+    border-bottom: solid 2px #288e84;
+    transition: border ease-in 0.5s;
+    color: white;
+
+}
+
+ul > li > a:hover {
+    border-bottom: solid 2px white;
+}
+
+header {
+    border-bottom: solid 2px white;
+    padding-left: 20px;
+}
+
+.listings {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:50px;
+    justify-content: space-around;
+    flex-direction: row;
+    max-width: 1080px;
+}
+
+.individual-listing {
+    width: 280px;
+    padding: 15px;
+    margin-bottom: 40px;
+    transition: transform ease-in 0.3s;
+    background-color: #6c7e7f;
+    border-radius: 10px;
+}
+
+.individual-listing > p {
+    line-height: 1.5;
+}
+
+.individual-listing:hover {
+    transform: scale(1.1);
+}
+
+.sub-nav > li {
+    padding-left: 20px;
+}
+
+form {
+    margin-left: 40px;
+}

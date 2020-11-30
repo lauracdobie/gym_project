@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <nav>
-    <ul>
+    <ul class="sub-nav">
         <li><a href="/fitness-classes/add">Add class to the timetable</a></li>
         <li><a href="/class-types/add">Add a new class type</a></li>
         <li><a href="/class-types/">View new class type</a></li>
@@ -9,13 +9,15 @@
 </nav>
 <main>
     <h2>Class types</h2>
-    <article>
+    <article class="listings">
     {% for class_type in class_types %}
+    <div class="individual-listing">
         <p>Name: {{class_type.name}}</p>
         <p>Description: {{class_type.description}}</p>
         <p>Intensity: {{class_type.intensity}}</p>
         <p>Difficulty: {{class_type.difficulty}}</p>
         <p><a href="/class-types/{{class_type.id}}/edit">Edit class type details</a></p>
+    </div>
     {% endfor %}
     </article>
 </main>

@@ -2,16 +2,18 @@
 {% block content %}
 <main>
     <h2>Bookings</h2>
-    <article>
+    <article class="listings">
     {% for booking in all_bookings %}
-        <p>Name: {{booking.member.name}}</p>
-        <p>Fitness class: {{booking.fitness_class.class_type.name}}</p>
-        <p>Date: {{booking.fitness_class.date}}</p>
-        <p>Time: {{booking.fitness_class.time}}</p>
-        <p>Membership no: {{booking.member.membership_no}}</p>
-        <form action="/bookings/{{booking.id}}/delete" method="POST">
-            <button type="submit" class="delete">DELETE BOOKING</button>
-        </form>
+        <div class="individual-listing">
+            <p>Name: {{booking.member.name}}</p>
+            <p>Fitness class: {{booking.fitness_class.class_type.name}}</p>
+            <p>Date: {{booking.fitness_class.date}}</p>
+            <p>Time: {{booking.fitness_class.time}}</p>
+            <p>Membership no: {{booking.member.membership_no}}</p>
+            <form action="/bookings/{{booking.id}}/delete" method="POST">
+                <button type="submit" class="delete">DELETE BOOKING</button>
+            </form>
+        </div>
     {% endfor %}
     </article>
 </main>

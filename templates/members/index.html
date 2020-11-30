@@ -1,26 +1,28 @@
 {% extends "base.html" %}
 {% block content %}
 <nav>
-    <ul>
+    <ul class="sub-nav">
         <li><a href="/members/add">Add a new member</a></li>
     </ul>
 </nav>
 <main>
     <h2>Members</h2>
-    <article>
-    {% for member in all_members %}
-        <p>Name: {{member.name}}</p>
-        <p>Address: {{member.address}}</p>
-        <p>Phone: {{member.phone}}</p>
-        <p>Email: {{member.email}}</p>
-        <p>Membership no: {{member.membership_no}}</p>
-        {% if member.premium == True %}
-            <p>Premium member</p>
-        {% else %}
-            <p>Standard member</p>
-        {% endif %}
-        <p><a href="/members/{{member.id}}/edit">Edit member details</a></p>
-    {% endfor %}
-    </article>
+        <article class="listings">
+            {% for member in all_members %}
+            <div class="individual-listing">
+                <p>Name: {{member.name}}</p>
+                <p>Address: {{member.address}}</p>
+                <p>Phone: {{member.phone}}</p>
+                <p>Email: {{member.email}}</p>
+                <p>Membership no: {{member.membership_no}}</p>
+                {% if member.premium == True %}
+                    <p>Premium member</p>
+                {% else %}
+                    <p>Standard member</p>
+                {% endif %}
+                <p><a href="/members/{{member.id}}/edit">Edit member details</a></p>
+            </div>    
+            {% endfor %}
+        </article>
 </main>
 {% endblock %}
