@@ -59,5 +59,19 @@ def create_booking():
 
 @bookings_blueprint.route("/bookings/<id>/delete", methods=['POST'])
 def delete_booking(id):
+    booking = booking_repository.select(id)
+    fitness_class_id = booking.fitness_class.id
+    fitness_class = fitness_class_repository.select(booking.fitness_class.id)
+    class_type = fitness_class.class_type
+    date = fitness_class.date
+    time = fitness_class.time
+    duration = fitness_class.duration
+    instructor = fitness_class.instructor
+    location = fitness_class.location
+    capacity = fitness_class.capacity + 1
+
+    fitness_class = FitnessClass(class_type, date, time, duration, instructor, capacity, location, fitness_class_id)
+    fitness_class_repository.edit(fitness_class)
+    
     booking_repository.delete(id)
     return redirect('/bookings')
