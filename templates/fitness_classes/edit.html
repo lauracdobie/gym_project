@@ -46,12 +46,13 @@
                 <input type="number" id="capacity" name="capacity" value="{{fitness_class.capacity}}" placeholder="Capacity" required>
             </div>
 
-            <button type="submit">Edit class details</button>
+            <button type="submit">Save</button>
         </form>
 
         <form action="/fitness-classes/{{fitness_class.id}}/delete" method="POST">
             <button type="submit" class="delete">DELETE FITNESS CLASS</button>
         </form>
+        <p><a href ="/fitness-classes" class="back">Back to Upcoming classes</a></p>
     </article>
 </main>
 {% endblock %}
