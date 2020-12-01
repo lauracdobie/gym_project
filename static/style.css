@@ -155,7 +155,7 @@ form {
 }
 
 .form > button:hover {
-    background-color: #00ebb4;
+    background-color: white;
 }
 
 .form > div > label {
@@ -200,4 +200,24 @@ form {
 
 .delete-booking:hover {
     background-color: white;
+}
+
+#find-class {
+    border: none;
+    padding: 10px;
+    background-color: #00ebb4;
+    color: #63887f;
+    font-family: 'Nunito', sans-serif;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color ease-in 0.5s;
+    margin-left: 15px;
+}
+
+#find-class:hover {
+    background-color: white;
+}
+
+#class-description-heading {
+    padding-left: 0px;
 }

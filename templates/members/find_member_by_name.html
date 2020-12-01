@@ -3,11 +3,14 @@
 <main>
     <h2>Find member</h2>
     <article>
-        <form action="/members/found-member" method="post">
+        <form action="/members/found-member" method="post" class="form">
+            <div>
                 <label for="name">Enter name</label>
                 <input type="text" id="name" name="name" placeholder="Name" size="30" required autofocus>
+            </div>
             <button type="submit">Find member</button>
-        </form>  
+        </form>
+        <p><a href ="/members" class="back">Back to members</a></p>  
     </article>
 </main>
 {% endblock %}

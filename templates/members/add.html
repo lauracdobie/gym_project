@@ -9,7 +9,7 @@
 <main>
     <h2>Add member</h2>
     <article>
-        <form action="/members" method="post">
+        <form action="/members" method="post" class="form">
             <div>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" placeholder="Name" size="30" required autofocus>
@@ -45,6 +45,7 @@
             
             <button type="submit">Add member</button>
         </form>
+        <p><a href ="/members" class="back">Back to members</a></p>
     </article>
 </main>
 {% endblock %}

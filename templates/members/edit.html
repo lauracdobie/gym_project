@@ -9,7 +9,7 @@
 <main>
     <h2>Edit member</h2>
     <article>
-        <form action="/members/{{member.id}}" method="post">
+        <form action="/members/{{member.id}}" method="post" class="form">
             <div>
                 <label for="name">Name</label>
                 <input type="text" id="name" name="name" value="{{member.name}}" placeholder="Name" size="30" required autofocus>
@@ -49,6 +49,7 @@
         <form action="/members/{{member.id}}/delete" method="POST">
             <button type="submit" class="delete">DELETE MEMBER</button>
         </form>
+        <p><a href ="/members" class="back">Back to members</a></p>
     </article>
 </main>
 {% endblock %}

@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
 <article class="class-description">
-    <h2>{{fitness_class.class_type.name}}</h2>
+    <h2 id="class-description-heading">{{fitness_class.class_type.name}}</h2>
     <p>{{fitness_class.class_type.description}}</p>
     <p>Intensity: {{fitness_class.class_type.intensity}}</p>
     <p>Difficulty: {{fitness_class.class_type.difficulty}}</p>
