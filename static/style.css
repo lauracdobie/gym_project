@@ -52,7 +52,7 @@ header {
     margin-left: auto;
     margin-right: auto;
     margin-top:50px;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-direction: row;
     max-width: 1080px;
 }

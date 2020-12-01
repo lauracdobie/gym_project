@@ -33,6 +33,10 @@ def booking_form():
 def class_full_message():
     return render_template("bookings/class_full.html")
 
+@bookings_blueprint.route("/bookings/member-already-booked")
+def already_booked_message():
+    return render_template("bookings/member_already_booked.html")
+
 @bookings_blueprint.route("/bookings", methods=['POST'])
 def create_booking():
     fitness_class = fitness_class_repository.select(request.form['fitness_class_id'])
@@ -45,7 +49,11 @@ def create_booking():
     instructor = fitness_class.instructor
     location = fitness_class.location
 
-
+    class_participants = fitness_class_repository.get_participants(fitness_class)
+    for participant in class_participants:
+        if participant.id == member.id:
+            return redirect('/bookings/member-already-booked')
+        
     if fitness_class.capacity > 0:
         capacity = fitness_class.capacity - 1
         fitness_class = FitnessClass(class_type, date, time, duration, instructor, capacity, location, id)
@@ -72,6 +80,6 @@ def delete_booking(id):
 
     fitness_class = FitnessClass(class_type, date, time, duration, instructor, capacity, location, fitness_class_id)
     fitness_class_repository.edit(fitness_class)
-    
+
     booking_repository.delete(id)
     return redirect('/bookings')

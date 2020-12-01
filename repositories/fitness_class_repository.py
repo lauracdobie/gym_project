@@ -72,4 +72,13 @@ def get_participants(fitness_class):
         participant_list.append(participant)
     
     return participant_list
+
+# def check_if_member_already_booked(fitness_class, member):
+#     participant_list = get_participants(fitness_class)
+#     booked_member = None
+#     for participant in participant_list:
+#         if participant.id == member.id:
+#             booked_member = member
+#     return booked_member
+    
   
