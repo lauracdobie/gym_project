@@ -101,3 +101,14 @@ form {
 .class-description {
     margin-left: 40px;
 }
+
+.class-description > p > a {
+    color: white;
+    text-decoration: none;
+    border-bottom: solid 2px #288e84;
+    transition: border ease-in 0.5s;
+}
+
+.class-description > p > a:hover {
+    border-bottom: solid 2px white;
+}
