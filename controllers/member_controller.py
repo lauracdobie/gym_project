@@ -62,12 +62,12 @@ def member_not_found_message(id):
     return render_template("members/member_not_found.html")
 
 @members_blueprint.route("/members/found-member", methods=['POST'])
-def get_member_from_name():
+def get_members_from_name():
     member_name = request.form['name']
-    member = member_repository.select_by_name(member_name)
+    members = member_repository.find_members_by_name(member_name)
     
-    if member is not None:
-        return render_template("members/found_member.html", member = member)
+    if len(members) > 0:
+        return render_template("members/found_member.html", members = members)
 
     else:
         return redirect('/members/member-not-found')

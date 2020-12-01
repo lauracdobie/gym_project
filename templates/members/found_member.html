@@ -3,6 +3,7 @@
 <main>
     <h2>Member details</h2>
         <article class="listings"> 
+            {% for member in members %}
             <div class="individual-listing">
                 <p>Name: {{member.name}}</p>
                 <p>Address: {{member.address}}</p>
@@ -15,7 +16,8 @@
                     <p>Standard member</p>
                 {% endif %}
                 <p><a href="/members">Back to members</a></p>
-            </div>
+            </div>    
+            {% endfor %}
         </article>
 </main>
 {% endblock %}

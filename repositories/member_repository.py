@@ -64,14 +64,16 @@ def select_by_membership_no(membership_no):
         member = Member(result['name'], result['address'], result['phone'], result['email'], result['premium'], result['membership_no'], result['id'])
     return member
 
-def select_by_name(name):
-    member = None
+def find_members_by_name(name):
+    found_members = []
     sql = "SELECT * from members WHERE name = %s"
     value = [name]
-    result = run_sql(sql, value)[0]
+    results = run_sql(sql, value)
 
-    if result is not None:
-        member = Member(result['name'], result['address'], result['phone'], result['email'], result['premium'], result['membership_no'], result['id'])
-    return member
+    for row in results:
+        member = Member(row['name'], row['address'], row['phone'], row['email'], row['premium'], row['membership_no'], row['id'])
+        found_members.append(member)
+    
+    return found_members
 
 
