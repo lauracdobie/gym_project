@@ -1,5 +1,7 @@
 {% extends "base_no_nav.html" %}
 {% block content %}
-<p>Whoa! This member is already booked onto this class!</p>
-<p><a href="/bookings/book-class">Back to booking form</a></p>
+<article class="error-message">
+    <p>Whoa! This member is already booked onto this class!</p>
+    <p><a href="/bookings/book-class">Back to booking form</a></p>
+</article>
 {% endblock %}

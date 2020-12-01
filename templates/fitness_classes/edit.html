@@ -3,7 +3,7 @@
 <main>
     <h2>Edit fitness class details</h2>
     <article>
-        <form action="/fitness-classes/{{fitness_class.id}}" method="post">
+        <form action="/fitness-classes/{{fitness_class.id}}" method="post" class="form">
             <div>
                 <label for="class_type">Class type</label>
                 <select id="class_type" name="class_type_id">
@@ -48,7 +48,7 @@
 
             <button type="submit">Edit class details</button>
         </form>
-        
+
         <form action="/fitness-classes/{{fitness_class.id}}/delete" method="POST">
             <button type="submit" class="delete">DELETE FITNESS CLASS</button>
         </form>
