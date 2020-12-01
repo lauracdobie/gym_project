@@ -64,4 +64,14 @@ def select_by_membership_no(membership_no):
         member = Member(result['name'], result['address'], result['phone'], result['email'], result['premium'], result['membership_no'], result['id'])
     return member
 
+def select_by_name(name):
+    member = None
+    sql = "SELECT * from members WHERE name = %s"
+    value = [name]
+    result = run_sql(sql, value)[0]
+
+    if result is not None:
+        member = Member(result['name'], result['address'], result['phone'], result['email'], result['premium'], result['membership_no'], result['id'])
+    return member
+
 

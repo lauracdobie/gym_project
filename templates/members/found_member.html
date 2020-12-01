@@ -1,15 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
-<nav>
-    <ul class="sub-nav">
-        <li><a href="/members/add">Add a new member</a></li>
-        <li><a href="/members/find-member-by-name">Find member by name</a></li>
-    </ul>
-</nav>
 <main>
-    <h2>Members</h2>
-        <article class="listings">
-            {% for member in all_members %}
+    <h2>Member details</h2>
+        <article class="listings"> 
             <div class="individual-listing">
                 <p>Name: {{member.name}}</p>
                 <p>Address: {{member.address}}</p>
@@ -21,9 +14,8 @@
                 {% else %}
                     <p>Standard member</p>
                 {% endif %}
-                <p><a href="/members/{{member.id}}/edit">Edit member details</a></p>
-            </div>    
-            {% endfor %}
+                <p><a href="/members">Back to members</a></p>
+            </div>
         </article>
 </main>
 {% endblock %}

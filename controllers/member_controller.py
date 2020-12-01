@@ -52,3 +52,22 @@ def update_member_details(id):
 def delete_member(id):
     member_repository.delete(id)
     return redirect('/members')
+
+@members_blueprint.route("/members/find-member-by-name")
+def find_member_form():
+    return render_template("members/find_member_by_name.html")
+
+@members_blueprint.route("/members/member-not-found")
+def member_not_found_message(id):
+    return render_template("members/member_not_found.html")
+
+@members_blueprint.route("/members/found-member", methods=['POST'])
+def get_member_from_name():
+    member_name = request.form['name']
+    member = member_repository.select_by_name(member_name)
+    
+    if member is not None:
+        return render_template("members/found_member.html", member = member)
+
+    else:
+        return redirect('/members/member-not-found')
