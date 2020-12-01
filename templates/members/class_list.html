@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<main>
+    <h2>Booked classes</h2>
+        <article class="listings">
+            <ol>   
+            {% for class in class_list %}
+                <li class="individual-listing">
+                    <p>{{class.class_type.name}}</p>
+                    <p><a href="/fitness-classes/{{class.id}}/description">Find out more about {{class.class_type.name}}</a></p>
+                    <p>{{class.date}}</p>
+                    <p>{{class.time}}</p>
+                    <p>Duration: {{class.duration}}</p>
+                    <p>Instructor: {{class.instructor}}</p>
+                    <p>Spaces: {{class.capacity}}</p>
+                    <p>{{class.location}}</p>
+                </li> 
+            {% endfor %}
+            </ol>
+        </article>
+        <a href="/members">Back to members</a> 
+</main>
+{% endblock %}

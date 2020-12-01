@@ -5,6 +5,7 @@ from models.class_type import ClassType
 from models.member import Member
 from models.booking import Booking
 import repositories.member_repository as member_repository
+import repositories.fitness_class_repository as fitness_class_repository
 
 members_blueprint = Blueprint("members", __name__)
 
@@ -71,3 +72,9 @@ def get_members_from_name():
 
     else:
         return redirect('/members/member-not-found')
+
+@members_blueprint.route("/members/<id>/booked-classes")
+def display_booked_classes(id):
+    member = member_repository.select(id)
+    class_list = member_repository.get_booked_classes(member)
+    return render_template("members/class_list.html", class_list = class_list)

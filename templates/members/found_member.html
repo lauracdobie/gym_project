@@ -2,22 +2,21 @@
 {% block content %}
 <main>
     <h2>Member details</h2>
-        <article class="listings"> 
-            {% for member in members %}
-            <div class="individual-listing">
-                <p>Name: {{member.name}}</p>
-                <p>Address: {{member.address}}</p>
-                <p>Phone: {{member.phone}}</p>
-                <p>Email: {{member.email}}</p>
-                <p>Membership no: {{member.membership_no}}</p>
-                {% if member.premium == True %}
-                    <p>Premium member</p>
-                {% else %}
-                    <p>Standard member</p>
-                {% endif %}
-            </div>    
-            {% endfor %}
-        </article>
-        <p><a href="/members">Back to members</a></p>
+    <article class="listings"> 
+        {% for member in members %}
+        <div class="individual-listing">
+            <p>Name: {{member.name}}</p>
+            <p>Address: {{member.address}}</p>
+            <p>Phone: {{member.phone}}</p>
+            <p>Email: {{member.email}}</p>
+            <p>Membership no: {{member.membership_no}}</p>
+            {% if member.premium == True %}
+                <p>Premium member</p>
+            {% else %}
+                <p>Standard member</p>
+            {% endif %}
+        </div>    
+        {% endfor %}
+    </article>
 </main>
 {% endblock %}

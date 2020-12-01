@@ -2,22 +2,21 @@
 {% block content %}
 <main>
     <h2>Class details</h2>
-        <article class="listings"> 
-            {% for fitness_class in fitness_classes %}
-            <div class="individual-listing">
-                <p>{{fitness_class.class_type.name}}</p>
-                <p><a href="/fitness-classes/{{fitness_class.id}}/description">Find out more about {{fitness_class.class_type.name}}</a></p>
-                <p>{{fitness_class.date}}</p>
-                <p>{{fitness_class.time}}</p>
-                <p>Duration: {{fitness_class.duration}}</p>
-                <p>Instructor: {{fitness_class.instructor}}</p>
-                <p>Spaces: {{fitness_class.capacity}}</p>
-                <p>{{fitness_class.location}}</p>
-                <p><a href="/fitness-classes/{{fitness_class.id}}/participant-list">View participant list</a></p>
-                <p><a href="/fitness-classes/{{fitness_class.id}}/edit">Edit class details</a></p>
-            </div>
-            {% endfor %}
-        </article>
-        <p><a href="/classes">Back to Upcoming classes</a></p>
+    <article class="listings"> 
+        {% for fitness_class in fitness_classes %}
+        <div class="individual-listing">
+            <p>{{fitness_class.class_type.name}}</p>
+            <p><a href="/fitness-classes/{{fitness_class.id}}/description">Find out more about {{fitness_class.class_type.name}}</a></p>
+            <p>{{fitness_class.date}}</p>
+            <p>{{fitness_class.time}}</p>
+            <p>Duration: {{fitness_class.duration}}</p>
+            <p>Instructor: {{fitness_class.instructor}}</p>
+            <p>Spaces: {{fitness_class.capacity}}</p>
+            <p>{{fitness_class.location}}</p>
+            <p><a href="/fitness-classes/{{fitness_class.id}}/participant-list">View participant list</a></p>
+            <p><a href="/fitness-classes/{{fitness_class.id}}/edit">Edit class details</a></p>
+        </div>
+        {% endfor %}
+    </article>
 </main>
 {% endblock %}

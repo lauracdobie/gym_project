@@ -21,6 +21,7 @@
                 {% else %}
                     <p>Standard member</p>
                 {% endif %}
+                <p><a href="/members/{{member.id}}/booked-classes">View booked classes</a></p>
                 <p><a href="/members/{{member.id}}/edit">Edit member details</a></p>
             </div>    
             {% endfor %}
