@@ -69,3 +69,15 @@ def delete_fitness_class(id):
 def view_class_description(id):
     fitness_class = fitness_class_repository.select(id)
     return render_template("fitness_classes/class_description.html", fitness_class = fitness_class)
+
+@fitness_classes_blueprint.route("/fitness-classes/find_classes-by-class-type")
+def find_class_type_form():
+    class_types = class_type_repository.select_all()
+    return render_template("fitness_classes/find_classes_by_class_type.html", class_types = class_types)
+
+@fitness_classes_blueprint.route("/fitness-classes/found-classes", methods=['POST'])
+def display_found_classes():
+    class_type = class_type_repository.select(request.form['class_type_id'])
+    fitness_classes = fitness_class_repository.find_classes_by_class_type(class_type)
+
+    return render_template("fitness_classes/found_classes.html", fitness_classes = fitness_classes)

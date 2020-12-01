@@ -73,12 +73,17 @@ def get_participants(fitness_class):
     
     return participant_list
 
-# def check_if_member_already_booked(fitness_class, member):
-#     participant_list = get_participants(fitness_class)
-#     booked_member = None
-#     for participant in participant_list:
-#         if participant.id == member.id:
-#             booked_member = member
-#     return booked_member
+def find_classes_by_class_type(class_type):
+    # class_type_id = class_type.id
+    found_classes = []
+    sql = "SELECT * from fitness_classes WHERE class_type_id = %s"
+    value = [class_type.id]
+    results = run_sql(sql, value)
+
+    for result in results:
+        found_class = FitnessClass(class_type, result['date'], result['time'], result['duration'], result['instructor'], result['capacity'], result['location'], result['id'])
+        found_classes.append(found_class)
+    
+    return found_classes
     
   

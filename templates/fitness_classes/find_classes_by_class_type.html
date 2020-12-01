@@ -1,0 +1,18 @@
+{% extends "base_no_nav.html" %}
+{% block content %}
+<main>
+    <h2>Find classes by class type</h2>
+    <article>
+        <form action="/fitness-classes/found-classes" method="post">
+            <div>
+                <label for="class_type">Class type</label>
+                <select id="class_type" name="class_type_id">
+                    {% for class_type in class_types %}
+                    <option value="{{class_type.id}}">{{class_type.name}}</option>
+                    {% endfor %}
+                </select>
+                <button type="submit">Find classes</button>
+            </div>
+        </form>
+    </article>
+    {% endblock %}
