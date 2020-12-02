@@ -24,9 +24,9 @@ CREATE TABLE class_types(
 CREATE TABLE fitness_classes(
     id SERIAL PRIMARY KEY,
     class_type_id INT REFERENCES class_types(id) ON DELETE CASCADE,
-    date VARCHAR(255),
-    time VARCHAR(255),
-    duration VARCHAR(255),
+    date DATE,
+    time TIME,
+    duration INT,
     instructor VARCHAR(255),
     capacity INT,
     location VARCHAR(255)

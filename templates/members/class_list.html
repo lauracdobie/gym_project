@@ -8,8 +8,8 @@
                 <li class="individual-listing">
                     <p>{{class.class_type.name}}</p>
                     <p><a href="/fitness-classes/{{class.id}}/description">Find out more about {{class.class_type.name}}</a></p>
-                    <p>{{class.date}}</p>
-                    <p>{{class.time}}</p>
+                    <p>{{class.formatted_date()}}</p>
+                    <p>{{class.formatted_time()}}</p>
                     <p>Duration: {{class.duration}}</p>
                     <p>Instructor: {{class.instructor}}</p>
                     <p>Spaces: {{class.capacity}}</p>
@@ -18,6 +18,6 @@
             {% endfor %}
             </ol>
         </article>
-        <a href="/members">Back to members</a> 
+        <a href="/members" class="back">Back to members</a> 
 </main>
 {% endblock %}

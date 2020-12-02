@@ -74,13 +74,25 @@ def get_participants(fitness_class):
     return participant_list
 
 def find_classes_by_class_type(class_type):
-    # class_type_id = class_type.id
     found_classes = []
     sql = "SELECT * from fitness_classes WHERE class_type_id = %s"
     value = [class_type.id]
     results = run_sql(sql, value)
 
     for result in results:
+        found_class = FitnessClass(class_type, result['date'], result['time'], result['duration'], result['instructor'], result['capacity'], result['location'], result['id'])
+        found_classes.append(found_class)
+    
+    return found_classes
+
+def find_classes_by_duration(duration):
+    found_classes = []
+    sql = "SELECT * from fitness_classes WHERE duration <= %s"
+    value = [duration]
+    results = run_sql(sql, value)
+
+    for result in results:
+        class_type = class_type_repository.select(result['class_type_id'])
         found_class = FitnessClass(class_type, result['date'], result['time'], result['duration'], result['instructor'], result['capacity'], result['location'], result['id'])
         found_classes.append(found_class)
     

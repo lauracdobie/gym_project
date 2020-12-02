@@ -221,3 +221,17 @@ form {
 #class-description-heading {
     padding-left: 0px;
 }
+
+.error-message > p {
+    margin-left: 40px;
+    font-size: 20px;
+    margin-top: 20px;
+}
+
+.error-message > p > a {
+    margin-left:0;
+}
+
+.search-description {
+    margin-left: 40px;
+}

@@ -7,8 +7,8 @@
         <div class="individual-listing" class="individual-booking">
             <p>{{booking.member.name}}</p>
             <p>{{booking.fitness_class.class_type.name}}</p>
-            <p>{{booking.fitness_class.date}}</p>
-            <p>{{booking.fitness_class.time}}</p>
+            <p>{{booking.fitness_class.formatted_date()}}</p>
+            <p>{{booking.fitness_class.formatted_time()}}</p>
             <p>Membership no: {{booking.member.membership_no}}</p>
             <form action="/bookings/{{booking.id}}/delete" method="POST">
                 <button type="submit" class="delete-booking">DELETE BOOKING</button>
