@@ -92,8 +92,10 @@ def display_found_classes_by_duration():
     duration = request.form['duration']
     fitness_classes = fitness_class_repository.find_classes_by_duration(duration)
 
-    for fitness_class in fitness_classes:
-        date = fitness_class.date
-        formatted_date = date.strftime("%d/%m/%Y") 
+    # for fitness_class in fitness_classes:
+    #     date = fitness_class.date
+    #     time = fitness_class.time
+    #     formatted_date = date.strftime("%d/%m/%Y")
+    #     formatted_time = time.strftime("%I:%M") 
 
-    return render_template("fitness_classes/found_classes.html", fitness_classes = fitness_classes, formatted_date=formatted_date)
+    return render_template("fitness_classes/found_classes.html", fitness_classes=fitness_classes)
