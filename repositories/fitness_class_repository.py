@@ -92,7 +92,8 @@ def find_classes_by_duration(duration):
     results = run_sql(sql, value)
 
     for result in results:
-        found_class = FitnessClass(result['class_type_id'], result['date'], result['time'], result['duration'], result['instructor'], result['capacity'], result['location'], result['id'])
+        class_type = class_type_repository.select(result['class_type_id'])
+        found_class = FitnessClass(class_type, result['date'], result['time'], result['duration'], result['instructor'], result['capacity'], result['location'], result['id'])
         found_classes.append(found_class)
     
     return found_classes

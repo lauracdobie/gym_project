@@ -8,3 +8,9 @@ class FitnessClass:
         self.capacity = capacity
         self.location = location
         self.id = id
+
+    def formatted_date(self):
+        return self.date.strftime("%a %B %d, %Y")
+
+    def formatted_time(self):
+        return self.time.strftime("%H:%M") 

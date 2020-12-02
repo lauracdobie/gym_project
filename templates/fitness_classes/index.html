@@ -6,7 +6,7 @@
         <li><a href="/class-types/add">Create new class type</a></li>
         <li><a href="/class-types">View class types</a></li>
         <li><a href="/fitness-classes/find_classes-by-class-type">Find by class type</a></li>
-        <!-- <li><a href="/fitness-classes/find-classes-by-duration">Find by duration</a></li> -->
+        <li><a href="/fitness-classes/find-classes-by-duration">Find by duration</a></li>
     </ul>
 </nav>
 <main>
@@ -16,8 +16,8 @@
     <div class="individual-listing">
         <p>{{fitness_class.class_type.name}}</p>
         <p><a href="/fitness-classes/{{fitness_class.id}}/description">Find out more about {{fitness_class.class_type.name}}</a></p>
-        <p>{{fitness_class.date}}</p>
-        <p>{{fitness_class.time}}</p>
+        <p>{{fitness_class.formatted_date()}}</p>
+        <p>{{fitness_class.formatted_time()}}</p>
         <p>Duration: {{fitness_class.duration}} minutes</p>
         <p>Instructor: {{fitness_class.instructor}}</p>
         <p>Spaces: {{fitness_class.capacity}}</p>
