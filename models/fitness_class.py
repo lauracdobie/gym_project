@@ -10,7 +10,7 @@ class FitnessClass:
         self.id = id
 
     def formatted_date(self):
-        return self.date.strftime("%a %B %d, %Y")
+        return self.date.strftime("%d/%m/%Y")
 
     def formatted_time(self):
         return self.time.strftime("%H:%M") 
