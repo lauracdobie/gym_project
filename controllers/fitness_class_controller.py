@@ -4,6 +4,7 @@ from models.fitness_class import FitnessClass
 from models.class_type import ClassType
 import repositories.fitness_class_repository as fitness_class_repository
 import repositories.class_type_repository as class_type_repository
+import datetime
 
 fitness_classes_blueprint = Blueprint("fitness_classes", __name__)
 
@@ -91,4 +92,8 @@ def display_found_classes_by_duration():
     duration = request.form['duration']
     fitness_classes = fitness_class_repository.find_classes_by_duration(duration)
 
-    return render_template("fitness_classes/found_classes.html", fitness_classes = fitness_classes)
+    for fitness_class in fitness_classes:
+        date = fitness_class.date
+        formatted_date = date.strftime("%d/%m/%Y") 
+
+    return render_template("fitness_classes/found_classes.html", fitness_classes = fitness_classes, formatted_date=formatted_date)
