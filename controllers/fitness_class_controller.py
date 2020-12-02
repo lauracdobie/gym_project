@@ -83,19 +83,20 @@ def display_found_classes():
 
     return render_template("fitness_classes/found_classes.html", fitness_classes = fitness_classes)
 
-@fitness_classes_blueprint.route("/fitness-classes/find-classes-by-duration")
-def find_classes_by_duration_form():
-    return render_template("fitness_classes/find_classes_by_duration.html")
+# @fitness_classes_blueprint.route("/fitness-classes/find-classes-by-duration")
+# def find_classes_by_duration_form():
+#     return render_template("fitness_classes/find_classes_by_duration.html")
 
-@fitness_classes_blueprint.route("/fitness-classes/find-classes-by-duration", methods=['POST'])
-def display_found_classes_by_duration():
-    duration = request.form['duration']
-    fitness_classes = fitness_class_repository.find_classes_by_duration(duration)
+# @fitness_classes_blueprint.route("/fitness-classes/find-classes-by-duration", methods=['POST'])
+# def display_found_classes_by_duration():
+#     duration = request.form['duration']
+#     fitness_classes = fitness_class_repository.find_classes_by_duration(duration)
 
-    # for fitness_class in fitness_classes:
-    #     date = fitness_class.date
-    #     time = fitness_class.time
-    #     formatted_date = date.strftime("%d/%m/%Y")
-    #     formatted_time = time.strftime("%I:%M") 
+#     for fitness_class in fitness_classes:
+#         class_type = class_type_repository.select(class_type.id)
+#         date = fitness_class.date
+#         time = fitness_class.time
+#         formatted_date = date.strftime("%d/%m/%Y")
+#         formatted_time = time.strftime("%I:%M") 
 
-    return render_template("fitness_classes/found_classes.html", fitness_classes=fitness_classes)
+#     return render_template("fitness_classes/found_classes.html", fitness_classes=fitness_classes)
