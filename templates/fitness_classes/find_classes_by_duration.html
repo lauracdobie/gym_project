@@ -1,0 +1,15 @@
+{% extends "base_no_nav.html" %}
+{% block content %}
+<main>
+    <h2>Find classes by duration</h2>
+    <article>
+        <form action="/fitness-classes/find-classes-by-duration" method="post" class="form">
+            <div>
+                <label for="duration">Duration</label>
+                <input type="number" id="duration" name="duration" placeholder="Duration" required>
+                <button type="submit" id="find-class">Find classes</button>
+            </div>
+        </form>
+        <p><a href ="/fitness-classes" class="back">Back to Upcoming classes</a></p>
+    </article>
+    {% endblock %}

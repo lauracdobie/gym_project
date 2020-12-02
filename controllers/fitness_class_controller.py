@@ -81,3 +81,14 @@ def display_found_classes():
     fitness_classes = fitness_class_repository.find_classes_by_class_type(class_type)
 
     return render_template("fitness_classes/found_classes.html", fitness_classes = fitness_classes)
+
+@fitness_classes_blueprint.route("/fitness-classes/find-classes-by-duration")
+def find_classes_by_duration_form():
+    return render_template("fitness_classes/find_classes_by_duration.html")
+
+@fitness_classes_blueprint.route("/fitness-classes/find-classes-by-duration", methods=['POST'])
+def display_found_classes_by_duration():
+    duration = request.form['duration']
+    fitness_classes = fitness_class_repository.find_classes_by_duration(duration)
+
+    return render_template("fitness_classes/found_classes.html", fitness_classes = fitness_classes)
