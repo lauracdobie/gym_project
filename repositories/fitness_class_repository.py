@@ -35,7 +35,7 @@ def edit(fitness_class):
 # select all
 def select_all():
     all_fitness_classes = []
-    sql = "SELECT * FROM fitness_classes ORDER BY date ASC"
+    sql = "SELECT * FROM fitness_classes ORDER BY date ASC, time ASC"
     results = run_sql(sql)
     # pdb.set_trace()
     for result in results:
