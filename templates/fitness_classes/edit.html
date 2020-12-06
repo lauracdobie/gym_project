@@ -15,13 +15,13 @@
             
             <div>
                 <label for="date">Date</label>
-                <input type="text" id="date" name="date" value="{{fitness_class.date}}" placeholder="Date" maxlength="10" required>
-                <p>Format: dd/mm/yyyy</p>
+                <input type="date" id="date" name="date" value="{{fitness_class.date}}" placeholder="Date" maxlength="10" required>
+                <!-- <p>Format: dd/mm/yyyy</p> -->
             </div>
 
             <div>
                 <label for="time">Time</label>
-                <input type="text" id="time" name="time" value="{{fitness_class.time}}" placeholder="Time" maxlength="5" required>
+                <input type="time" id="time" name="time" value="{{fitness_class.formatted_time()}}" min="06:00" max="21:00" maxlength="5" required>
                 <p>Format: hh:mm</p>
             </div>
 
