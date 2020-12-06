@@ -8,9 +8,9 @@ import pdb
 
 #delete all
 def delete_all():
-    #Write a sql query to delete everything from the members table and save it as variable called sql
+    #Write a sql query to delete everything from the members table and store it variable called sql
     sql = "DELETE  FROM members"
-    #Run the run_sql function, passing in the sql variable as an argument
+    #Run the imported run_sql function, passing in the sql variable as an argument
     run_sql(sql)
 
 
@@ -70,7 +70,7 @@ def select_by_membership_no(membership_no):
 
 def find_members_by_name(name):
     found_members = []
-    sql = "SELECT * from members WHERE name = %s"
+    sql = "SELECT * from members WHERE UPPER(name) = UPPER(%s)"
     value = [name]
     results = run_sql(sql, value)
 
