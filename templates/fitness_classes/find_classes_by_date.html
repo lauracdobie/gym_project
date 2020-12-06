@@ -1,0 +1,15 @@
+{% extends "base_no_nav.html" %}
+{% block content %}
+<main>
+    <h2>Find classes by date</h2>
+    <article>
+        <form action="/fitness-classes/find-classes-by-date" method="post" class="form">
+            <div>
+                <label for="date">Date</label>
+                <input type="date" id="date" name="date" placeholder="Date" required>
+                <button type="submit" id="find-class">Find classes</button>
+            </div>
+        </form>
+        <p><a href ="/fitness-classes" class="back">Back to Upcoming classes</a></p>
+    </article>
+    {% endblock %}

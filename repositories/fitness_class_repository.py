@@ -97,5 +97,18 @@ def find_classes_by_duration(duration):
         found_classes.append(found_class)
     
     return found_classes
+
+def find_classes_by_date(date):
+    found_classes = []
+    sql = "SELECT * from fitness_classes WHERE date = %s"
+    value = [date]
+    results = run_sql(sql, value)
+
+    for result in results:
+        class_type = class_type_repository.select(result['class_type_id'])
+        found_class = FitnessClass(class_type, result['date'], result['time'], result['duration'], result['instructor'], result['capacity'], result['location'], result['id'])
+        found_classes.append(found_class)
+    
+    return found_classes
     
   
