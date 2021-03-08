@@ -1,5 +1,5 @@
 # gym_project
-Class booking app for a gym.
+Member and fitness class booking management system for a gym.
 
 The brief was for the app to allow the user to: 
 add/edit members
