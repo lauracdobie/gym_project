@@ -11,7 +11,7 @@
             
             <div>
               <label for="description">Description</label>
-              <input type="text" id="description" name="description" value="{{class_type.description}}" placeholder="Description" size="80" required>
+              <textarea id="description" name="description" placeholder="Description" rows="4" cols="30" required>{{class_type.description}}</textarea>
             </div>
 
             <div>
@@ -27,10 +27,12 @@
             <button type="submit">Edit class type</button>
         </form>
 
-        <form action="/class-types/{{class_type.id}}/delete" method="POST">
+        <form class="delete-form" action="/class-types/{{class_type.id}}/delete" method="POST">
             <button type="submit" class="delete">DELETE CLASS TYPE</button>
         </form>
-        <p><a href="/class-types" class="back">Back to class types</a></p>
+        <div class="back-section">
+            <p><a href="/class-types" class="back">Back to class types</a></p>
+        </div>
     </article>
 </main>
 {% endblock %}

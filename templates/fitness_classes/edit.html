@@ -49,10 +49,13 @@
             <button type="submit">Save</button>
         </form>
 
-        <form action="/fitness-classes/{{fitness_class.id}}/delete" method="POST">
+        <form class="delete-form" action="/fitness-classes/{{fitness_class.id}}/delete" method="POST">
             <button type="submit" class="delete">DELETE FITNESS CLASS</button>
         </form>
-        <p><a href ="/fitness-classes" class="back">Back to Upcoming classes</a></p>
+
+        <div class="back-section">
+            <p><a href ="/fitness-classes" class="back">Back to Upcoming classes</a></p>
+        </div>
     </article>
 </main>
 {% endblock %}

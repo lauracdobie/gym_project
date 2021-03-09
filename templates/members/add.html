@@ -17,7 +17,7 @@
             
             <div>
               <label for="address">Address</label>
-              <input type="text" id="address" name="address" placeholder="Address" size="80" required>
+              <textarea id="address" name="address" placeholder="Address" rows="4" cols="30" required></textarea>
             </div>
 
             <div>
@@ -45,7 +45,10 @@
             
             <button type="submit">Add member</button>
         </form>
-        <p><a href ="/members" class="back">Back to members</a></p>
+
+        <div class="back-section">
+            <p><a href ="/members" class="back">Back to members</a></p>
+        </div>
     </article>
 </main>
 {% endblock %}

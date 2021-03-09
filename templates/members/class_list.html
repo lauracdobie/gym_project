@@ -3,7 +3,7 @@
 <main>
     <h2>Booked classes</h2>
         <article class="listings">
-            <ol>   
+            <ol class="booked-classes">   
             {% for class in class_list %}
                 <li class="individual-listing">
                     <p>{{class.class_type.name}}</p>
@@ -18,6 +18,9 @@
             {% endfor %}
             </ol>
         </article>
-        <a href="/members" class="back">Back to members</a> 
+
+        <div class="back-section">
+            <a href="/members" class="back">Back to members</a>
+        </div> 
 </main>
 {% endblock %}

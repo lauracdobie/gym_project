@@ -11,7 +11,7 @@
             
             <div>
               <label for="description">Description</label>
-              <input type="text" id="description" name="description" placeholder="Description" size="80" required>
+              <textarea id="description" name="description" placeholder="Description" rows="4" cols="30" required></textarea>
             </div>
 
             <div>
@@ -26,7 +26,9 @@
             
             <button type="submit">Add class type</button>
         </form>
-        <p><a href="/class-types" class="back">Back to class types</a></p>
+        <div class="back-section">
+            <p><a href="/class-types" class="back">Back to class types</a></p>
+        </div>
     </article>
 </main>
 {% endblock %}
